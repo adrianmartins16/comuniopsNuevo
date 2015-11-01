@@ -20,6 +20,8 @@
             android:label="@string/title_activity_home_"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".Twitter_Activity" android:label="Social"/>
+        <activity android:name=".Facebook_Activity" android:label="Social"/>
     </application>
 
 </manifest>

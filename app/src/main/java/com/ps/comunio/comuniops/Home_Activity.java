@@ -1,5 +1,6 @@
 package com.ps.comunio.comuniops;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class Home_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Home_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    Button btTwitter;
+    Button btFacebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,27 @@ public class Home_Activity extends AppCompatActivity
         setContentView(R.layout.activity_home_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Listeners de los botones de Home
+        btTwitter= (Button) findViewById(R.id.button);
+        btTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent j = new Intent(Home_Activity.this, Twitter_Activity.class);
+
+                startActivity(j);
+            }
+        });
+
+        btFacebook= (Button) findViewById(R.id.button2);
+        btFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent j = new Intent(Home_Activity.this, Facebook_Activity.class);
+
+                startActivity(j);
+            }
+        });
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +116,10 @@ public class Home_Activity extends AppCompatActivity
 
         } else if (id == R.id.nav_jugadores) {
 
+        }else if (id == R.id.nav_cerrarsesion){
+        Intent i = new Intent(Home_Activity.this, Login_Activity.class);
+        i.putExtra("user", "");
+        startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
