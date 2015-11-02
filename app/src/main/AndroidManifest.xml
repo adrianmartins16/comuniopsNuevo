@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".Twitter_Activity" android:label="Social"/>
         <activity android:name=".Facebook_Activity" android:label="Social"/>
+        <activity android:name=".Jugador_Activity" android:label="Jugador"/>
+        <activity android:name=".Jugadores_Activity" android:label="Jugadores"/>
     </application>
 
 </manifest>
