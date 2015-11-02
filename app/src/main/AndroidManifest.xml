@@ -20,10 +20,23 @@
             android:label="@string/title_activity_home_"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Twitter_Activity" android:label="Social"/>
-        <activity android:name=".Facebook_Activity" android:label="Social"/>
-        <activity android:name=".Jugador_Activity" android:label="Jugador"/>
-        <activity android:name=".Jugadores_Activity" android:label="Jugadores"/>
+        <activity
+            android:name=".Twitter_Activity"
+            android:label="Social" />
+        <activity
+            android:name=".Facebook_Activity"
+            android:label="Social" />
+        <activity
+            android:name=".Jugador_Activity"
+            android:label="Jugador" />
+        <activity
+            android:name=".Jugadores_Activity"
+            android:label="Jugadores" />
+        <activity
+            android:name=".Jornadas_Activity"
+            android:label="Jornadas" >
+        </activity>
+        <activity android:name=".Liga_Activity" android:label="Liga"/>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

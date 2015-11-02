@@ -105,13 +105,15 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_ligas) {
-
+            Intent i = new Intent(Home_Activity.this, Liga_Activity.class);
+            startActivity(i);
         } else if (id == R.id.nav_miequipo) {
 
         } else if (id == R.id.nav_mercado) {
 
         } else if (id == R.id.nav_jornada) {
-
+            Intent i = new Intent(Home_Activity.this, Jornadas_Activity.class);
+            startActivity(i);
         } else if (id == R.id.nav_jugadores) {
             Intent i = new Intent(Home_Activity.this, Jugadores_Activity.class);
             startActivity(i);
