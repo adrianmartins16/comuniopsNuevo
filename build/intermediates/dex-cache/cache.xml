@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-d5de81ec5b6bacabb592914542ecae39b484d8fc.jar" />
+        <dex dex="C:\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-e38d0f9959926912993f8fff7e6f3bf7781e6c58.jar" />
     </item>
     <item
-        jar="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-b077ea296195290a397571f29a8d4f69d2b11573.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-f61a5cff9e59d5e0c5be7d48d85b19b1a0bff0de.jar" />
-    </item>
-    <item
-        jar="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-0f993ffd181943f571bea4ca3bf633814dc96d28.jar" />
+        <dex dex="C:\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-973223b55f17162fa406d1c3590d7c52352699a5.jar" />
     </item>
     <item
-        jar="C:\Users\Hawk\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\classes-253b31e6cadb360afb1aea7a4b81b96bd5071ea0.jar" />
+    </item>
+    <item
+        jar="C:\Users\JuanAntonio\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Hawk\AndroidStudioProjects\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-dfa5d24f000a392f49cad9bad7b64c9a403f3c84.jar" />
+        <dex dex="C:\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-907eaf1859e5089c01d7e6837f777e5eb92c038b.jar" />
+    </item>
+    <item
+        jar="C:\comuniopsNuevo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\comuniopsNuevo\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-aeaf2e91ef61222c35a264a75c2a486c7b2dbbfd.jar" />
     </item>
 
 </items>
