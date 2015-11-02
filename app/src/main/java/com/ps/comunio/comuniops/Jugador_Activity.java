@@ -8,7 +8,7 @@ import android.widget.TextView;
 public class Jugador_Activity extends AppCompatActivity {
 
     String[] nombres = {"Tono", "Victor", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman", "Mandril", "Torres"};
-    int[] imagenes = {R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage};
+    int[] imagenes = {R.mipmap.jugador_nicage,R.mipmap.jugador_senor,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage,R.mipmap.jugador_nicage};
     String[] precios = {"1234 €", "996775 €", "34235 €", "345235 €", "9083 €","4332 €", "2134 €", "4234215 €", "99999 €", "234352 €"};
     String[] posiciones = {"Portero", "Delantero", "Defensa", "Centrocampista", "Lateral derecho","Lateral izquierdo", "Defensa", "Delantero", "Portero", "Centrocampista"};
     @Override

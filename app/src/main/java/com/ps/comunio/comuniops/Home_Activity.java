@@ -108,7 +108,8 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
             Intent i = new Intent(Home_Activity.this, Liga_Activity.class);
             startActivity(i);
         } else if (id == R.id.nav_miequipo) {
-
+            Intent i = new Intent(Home_Activity.this, Equipo_Activity.class);
+            startActivity(i);
         } else if (id == R.id.nav_mercado) {
             Intent i = new Intent(Home_Activity.this, Mercado_Activity.class);
             startActivity(i);

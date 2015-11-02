@@ -21,7 +21,6 @@
             android:layout_gravity="center_horizontal|top"
             android:maxWidth="150dp"
             android:maxHeight="150dp"
-            android:src="@mipmap/jugador_nicage"
             android:minHeight="150dp"
             android:minWidth="150dp"
             android:scaleType="fitXY" />
