@@ -9,7 +9,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/editText2"
-        android:layout_below="@+id/textView9"
+        android:layout_below="@+id/tvSalarioTotal"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="127dp" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Introduce tu cuenta de Facebook o correo asociado para que todos tus seguidores puedan ver tu equipo, los fichajes que realizas y mucho más."
-        android:id="@+id/textView9"
+        android:id="@+id/tvSalarioTotal"
         android:layout_marginTop="44dp"
         android:layout_marginLeft="12dp"
         android:textSize="20dp"
@@ -66,8 +66,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/textView9"
-        android:layout_alignStart="@+id/textView9"
+        android:layout_alignLeft="@+id/tvSalarioTotal"
+        android:layout_alignStart="@+id/tvSalarioTotal"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/textView8"
         android:layout_toStartOf="@+id/textView8"
