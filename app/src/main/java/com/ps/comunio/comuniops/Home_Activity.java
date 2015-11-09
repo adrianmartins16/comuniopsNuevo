@@ -1,6 +1,7 @@
 package com.ps.comunio.comuniops;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TabHost;
 
 public class Home_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Button btTwitter;
@@ -23,6 +25,20 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_home_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Resources res = getResources();
+        TabHost tabs = (TabHost) findViewById(android.R.id.tabhost);
+        tabs.setup();
+        TabHost.TabSpec spec = tabs.newTabSpec("Pestaña 1");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Social");
+        tabs.addTab(spec);
+
+        tabs.setup();
+        TabHost.TabSpec spec1 = tabs.newTabSpec("Pestaña 2");
+        spec1.setContent(R.id.tab2);
+        spec1.setIndicator("Noticias");
+        tabs.addTab(spec1);
 
         //Listeners de los botones de Home
         btTwitter= (Button) findViewById(R.id.button);
