@@ -3,42 +3,51 @@
     android:layout_height="match_parent" android:orientation="vertical"
     tools:context="com.ps.comunio.comuniops.Equipo_Activity" android:weightSum="1">
 
-    <TextView
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textViewName"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.04" />
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Fondos: "
-        android:id="@+id/textView5"
-        android:layout_gravity="end" />
-
-    <LinearLayout
-        android:orientation="vertical"
+    <TabHost
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.10"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        android:id="@android:id/tabhost">
 
-        <TextView
-            android:layout_width="139dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textFondos"
-            android:layout_gravity="right" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="392dp"
-        android:id="@+id/listView"
-        android:layout_gravity="center_horizontal" />
+            <TabWidget
+                android:layout_width="fill_parent"
+                android:layout_height="53dp"
+                android:id="@android:id/tabs"></TabWidget>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@android:id/tabcontent">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/tab3">
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="392dp"
+                        android:id="@+id/listView"
+                        android:layout_gravity="center_horizontal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/tab4">
+
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </TabHost>
 
 </LinearLayout>
