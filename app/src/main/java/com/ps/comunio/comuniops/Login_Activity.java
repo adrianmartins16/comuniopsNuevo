@@ -20,7 +20,7 @@ public class Login_Activity extends AppCompatActivity {
     Button btRegistro;
     EditText etUser;
     EditText etPass;
-    ArrayList<Usuarios_DB> listaUsuarios;
+    ArrayList<Usuarios_DB> listaUsuarios = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
