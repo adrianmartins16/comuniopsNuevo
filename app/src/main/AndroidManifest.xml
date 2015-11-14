@@ -50,6 +50,8 @@
             android:name=".Equipo_Activity"
             android:label="Equipo" >
         </activity>
+        <activity android:name=".Registrar_Activity" >
+        </activity>
     </application>
 
 </manifest>
