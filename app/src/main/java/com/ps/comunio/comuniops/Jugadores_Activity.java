@@ -16,7 +16,7 @@ public class Jugadores_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugadores_);
 
-        final String[] jugadores = {"Tono", "Victor", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman", "Mandril", "Torres"};
+        final String[] jugadores = {"Tono", "Victor", "Van Der Bin", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman", "Mandril", "Torres"};
 
         list = (ListView)findViewById(R.id.lvjugadores);
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, jugadores);

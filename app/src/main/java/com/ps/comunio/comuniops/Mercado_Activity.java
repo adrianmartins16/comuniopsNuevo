@@ -3,6 +3,7 @@ package com.ps.comunio.comuniops;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,7 @@ public class Mercado_Activity extends AppCompatActivity {
         int i=10000000;
         TextView tvSalarioT= (TextView) findViewById(R.id.tvSalarioTotal);
         tvSalarioT.setText(Integer.toString(i));
+        setResult(RESULT_CANCELED, null);
     }
 
     public void confirmacionCompra(View v){
@@ -37,11 +39,11 @@ public class Mercado_Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(Mercado_Activity.this, "Jugador comprado", Toast.LENGTH_LONG).show();
-                TextView tvSalarioT= (TextView) findViewById(R.id.tvSalarioTotal);
-                String auxSalario=tvSalarioT.getText().toString();
-                int valorSalT=Integer.parseInt(auxSalario);
+                TextView tvSalarioT = (TextView) findViewById(R.id.tvSalarioTotal);
+                String auxSalario = tvSalarioT.getText().toString();
+                int valorSalT = Integer.parseInt(auxSalario);
                 //coger de la BD
-                valorSalT=valorSalT-100000;
+                valorSalT = valorSalT - 100000;
                 tvSalarioT.setText(Integer.toString(valorSalT));
             }
         });
@@ -50,11 +52,13 @@ public class Mercado_Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(Mercado_Activity.this, "Operación cancelada", Toast.LENGTH_LONG).show();
+                setResult(RESULT_CANCELED);
             }
         });
         AlertDialog d= b.create();
         d.show();
     }
+
 
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();

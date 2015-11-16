@@ -44,7 +44,7 @@
         <activity
             android:name=".Mercado_Activity"
             android:label="@string/title_activity_mercado"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".Equipo_Activity"

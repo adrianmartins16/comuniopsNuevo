@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class Home_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Button btTwitter;
@@ -44,10 +45,10 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         //Listeners de los botones de Home
         btTwitter= (Button) findViewById(R.id.button);
         btTwitter.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent j = new Intent(Home_Activity.this, Twitter_Activity.class);
-
                 startActivity(j);
             }
         });
@@ -61,6 +62,7 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(j);
             }
         });
+
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +136,7 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
             Intent i = new Intent(Home_Activity.this, Jornadas_Activity.class);
             startActivity(i);
         } else if (id == R.id.nav_jugadores) {
-            Intent i = new Intent(Home_Activity.this, Jugadores_Activity.class);
+            Intent i = new Intent(this, Jugadores_Activity.class);
             startActivity(i);
         }else if (id == R.id.nav_cerrarsesion){
         Intent i = new Intent(Home_Activity.this, Login_Activity.class);
@@ -147,4 +149,5 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

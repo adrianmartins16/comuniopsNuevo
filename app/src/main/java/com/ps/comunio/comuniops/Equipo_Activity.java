@@ -37,7 +37,7 @@ public class Equipo_Activity extends AppCompatActivity {
         tabs.addTab(spec1);
 
         //Plantilla
-        final String[] miplantilla = {"Tono", "Victor", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman", "Mandril", "Torres"};
+        final String[] miplantilla = {"Tono", "Victor", "Van Der Bin", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman"};
 
         plantilla = (ListView)findViewById(R.id.listView);
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, miplantilla);
