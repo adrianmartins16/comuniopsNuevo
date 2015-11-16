@@ -10,137 +10,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Ligas"
-        android:textSize="45dp"
-        android:id="@+id/textView5"
+        android:id="@+id/textViewMercado"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Liga prueba"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre jugador"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_toLeftOf="@+id/textView5"
-        android:layout_toStartOf="@+id/textView5"
-        android:layout_marginTop="40dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pepe"
-        android:id="@+id/textView8"
-        android:layout_alignRight="@+id/textView7"
-        android:layout_alignEnd="@+id/textView7"
-        android:layout_alignTop="@+id/textView13"
-        android:layout_alignLeft="@+id/textView16"
-        android:layout_alignStart="@+id/textView16" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agapito"
-        android:id="@+id/textView9"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignRight="@+id/textView6"
-        android:layout_alignEnd="@+id/textView6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eustaquio"
-        android:id="@+id/textView10"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textView9"
-        android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Puntos "
-        android:id="@+id/textView11"
-        android:layout_alignTop="@+id/textView7"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView12"
-        android:layout_above="@+id/textView9"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="25"
-        android:id="@+id/textView13"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="18"
-        android:id="@+id/textView14"
-        android:layout_alignTop="@+id/textView9"
-        android:layout_alignLeft="@+id/textView12"
-        android:layout_alignStart="@+id/textView12" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="17"
-        android:id="@+id/textView15"
-        android:layout_alignTop="@+id/textView10"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marcos"
-        android:id="@+id/textView16"
-        android:layout_marginBottom="46dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView10"
-        android:layout_alignEnd="@+id/textView10" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="15"
-        android:id="@+id/textView17"
-        android:layout_alignTop="@+id/textView16"
-        android:layout_toRightOf="@+id/textView12"
-        android:layout_toEndOf="@+id/textView12" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView3"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_alignRight="@+id/textView13"
-        android:layout_alignEnd="@+id/textView13"
-        android:src="@mipmap/actualizar" />
+        android:src="@mipmap/actualizar"
+        android:layout_alignTop="@+id/textViewMercado"
+        android:layout_toRightOf="@+id/textViewMercado"
+        android:layout_alignBottom="@+id/textViewMercado" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/liguilla"
+        android:layout_below="@+id/textViewMercado" />
+
+
 
 </RelativeLayout>

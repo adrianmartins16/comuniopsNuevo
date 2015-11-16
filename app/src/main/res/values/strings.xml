@@ -11,4 +11,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_mercado">Mercado</string>
     <string name="title_activity_equipo_">Equipo_Activity</string>
+    <string name="title_activity_venta_">Venta_Activity</string>
+
+    <string-array name="liguilla">
+        <item>LigAmigos</item>
+        <item>LigaUni</item>
+        <item>LigaPro</item>
+    </string-array>
 </resources>

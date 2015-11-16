@@ -11,12 +11,14 @@ import android.widget.Toast;
 
 public class Jugadores_Activity extends AppCompatActivity {
     private ListView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugadores_);
 
-        final String[] jugadores = {"Tono", "Victor", "Van Der Bin", "Felix", "Alvaro", "Adrian","Uafi", "Carlos", "Superman", "Mandril", "Torres"};
+        final String[] jugadores = {"Tono", "Victor", "Van Der Bin", "Felix", "Alvaro", "Adrian", "Uafi", "Carlos", "Suparman", "Manril", "Torres", "Walter White", "Donald McDonnal", "Chuck Norris", "Bruce Banner", "Babab George", "Neymar","Marco Lolo","Benzema","Igor Casitas","Oliver Atom","Harry Rotter","Neil","Nicolas Rage"};
+
 
         list = (ListView)findViewById(R.id.lvjugadores);
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, jugadores);
