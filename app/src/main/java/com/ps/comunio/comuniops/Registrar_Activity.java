@@ -34,8 +34,8 @@ public class Registrar_Activity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                         Intent i = new Intent(Registrar_Activity.this, Login_Activity.class);
-                        i.putExtra("user", etUserNew.getText());
-                        i.putExtra("pass", etPassNew.getText());
+                        i.putExtra("user", etUserNew.getText().toString());
+                        i.putExtra("pass", etPassNew.getText().toString());
                         startActivity(i);
                         finish();
 

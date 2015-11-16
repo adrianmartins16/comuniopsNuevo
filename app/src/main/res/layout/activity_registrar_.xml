@@ -38,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="UserName"
                 android:ems="10"
                 android:id="@+id/editTextusername" />
 
@@ -55,8 +54,7 @@
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/editTextpass1"
-                android:layout_gravity="center_horizontal"
-                android:text="Password" />
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
