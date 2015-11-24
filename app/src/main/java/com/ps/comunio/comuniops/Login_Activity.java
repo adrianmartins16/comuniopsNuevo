@@ -1,37 +1,22 @@
 package com.ps.comunio.comuniops;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLConnection;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+
 import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 
 public class Login_Activity extends AppCompatActivity {
@@ -41,29 +26,23 @@ public class Login_Activity extends AppCompatActivity {
     Button btRegistro;
     EditText etUser;
     EditText etPass;
-    ArrayList<Usuarios_DB> listaUsuarios = new ArrayList<>();
-    private ProgressDialog progressDialog;
-    private String text = null;
+    //ArrayList<Usuarios_DB> listaUsuarios = new ArrayList<>();
+    ArrayList<String> listaU = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        obtDatos();
 
-        try {
-            text = conexionURL("http://comuniops.hol.es/index.php?funcion=checkLogin&username=reiner&password=reiner");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Toast.makeText(Login_Activity.this, text,
-                Toast.LENGTH_SHORT).show();
-
-        listaUsuarios.add(admin);
+        //listaUsuarios.add(admin);
         if((getIntent().getStringExtra("user")!=null)&&(getIntent().getStringExtra("pass")!=null)){
             String username = getIntent().getStringExtra("user");
             String password = getIntent().getStringExtra("pass");
             Usuarios_DB nuevo = new Usuarios_DB(username,password);
-            listaUsuarios.add(nuevo);
+            //listaUsuarios.add(nuevo);
         }
 
 
@@ -78,9 +57,9 @@ public class Login_Activity extends AppCompatActivity {
                 //Log.d("Login", String.valueOf(tvUser.getText()));
                 String sacarUsername = etUser.getText().toString();
                 String sacarPassword = etPass.getText().toString();
-                Usuarios_DB comprobador = new Usuarios_DB(sacarUsername,sacarPassword);
 
-                if (tieneUsuario(comprobador)) {
+
+                if (tieneUsuario(sacarUsername)) {
                     Log.d("Login", "Usuario Valido");
                     Log.d("Login", "Pass Valido");
                     Intent i = new Intent(Login_Activity.this, Home_Activity.class);
@@ -97,48 +76,58 @@ public class Login_Activity extends AppCompatActivity {
             }
         });
         btRegistro = (Button) findViewById(R.id.buttonRegistrarLogin);
-        btRegistro.setOnClickListener(new View.OnClickListener(){
+        btRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    Intent i = new Intent(Login_Activity.this, Registrar_Activity.class);
-                    startActivity(i);
+                Intent i = new Intent(Login_Activity.this, Registrar_Activity.class);
+                startActivity(i);
 
 
             }
         });
-
-
     }
-    public String conexionURL(String urlString) throws IOException {
-        URL url = new URL("http://www.android.com/");
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        try {
-            InputStream
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-             return readStream(in);
 
-        }finally {
-            urlConnection.disconnect();
-        }
-
-    }
-    private String readStream(InputStream is) {
-        try {
-            ByteArrayOutputStream bo = new ByteArrayOutputStream();
-            int i = is.read();
-            while(i != -1) {
-                bo.write(i);
-                i = is.read();
+    public void obtDatos(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://comuniops.hol.es/index.php?funcion=getUsers";
+        RequestParams params = new RequestParams();
+        client.get(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200) {
+                    listaU = datosJSON(new String(responseBody));
+                }
             }
-            return bo.toString();
-        } catch (IOException e) {
-            return "";
-        }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+
+            }
+        });
     }
-    public Boolean tieneUsuario(Usuarios_DB userPasado){
-        for (Usuarios_DB i:listaUsuarios) {
-            if ((i.getUsername().equals(userPasado.getUsername()))&&(i.getPass().equals(userPasado.getPass()))){
+
+    public ArrayList<String> datosJSON(String response){
+        ArrayList<String> lista = new ArrayList<String>();
+        try{
+            JSONArray jsonArray = new JSONArray(response);
+            String texto;
+            for(int i=0; i<jsonArray.length(); i++){
+                texto = jsonArray.getJSONObject(i).getString("username");
+                lista.add(texto);
+            }
+        }catch(Exception e){
+
+        }
+        return lista;
+    }
+
+
+
+    public Boolean tieneUsuario(String u){
+        for (String i:listaU) {
+            if (i.equals(u)){
                 return Boolean.TRUE;
             }
         }
