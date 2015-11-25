@@ -21,13 +21,12 @@ import cz.msebera.android.httpclient.Header;
 
 public class Login_Activity extends AppCompatActivity {
 
-    Usuarios_DB admin = new Usuarios_DB("admin","1234");
     Button btLogin;
     Button btRegistro;
     EditText etUser;
     EditText etPass;
-    //ArrayList<Usuarios_DB> listaUsuarios = new ArrayList<>();
     ArrayList<String> listaU = new ArrayList<>();
+    ArrayList<String> listaP = new ArrayList<>();
 
 
 
@@ -36,15 +35,6 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         obtDatos();
-
-        //listaUsuarios.add(admin);
-        if((getIntent().getStringExtra("user")!=null)&&(getIntent().getStringExtra("pass")!=null)){
-            String username = getIntent().getStringExtra("user");
-            String password = getIntent().getStringExtra("pass");
-            Usuarios_DB nuevo = new Usuarios_DB(username,password);
-            //listaUsuarios.add(nuevo);
-        }
-
 
         etUser = (EditText) findViewById(R.id.editTextUserLogin);
         etPass = (EditText) findViewById(R.id.editTextPassLogin);
@@ -59,7 +49,7 @@ public class Login_Activity extends AppCompatActivity {
                 String sacarPassword = etPass.getText().toString();
 
 
-                if (tieneUsuario(sacarUsername)) {
+                if (verifPass(sacarUsername, sacarPassword)){
                     Log.d("Login", "Usuario Valido");
                     Log.d("Login", "Pass Valido");
                     Intent i = new Intent(Login_Activity.this, Home_Activity.class);
@@ -96,19 +86,20 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200) {
-                    listaU = datosJSON(new String(responseBody));
+                    listaU = usersJSON(new String(responseBody));
+                    listaP = passJSON(new String(responseBody));
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
-
             }
         });
     }
 
-    public ArrayList<String> datosJSON(String response){
+    public ArrayList<String> usersJSON(String response){
+
         ArrayList<String> lista = new ArrayList<String>();
         try{
             JSONArray jsonArray = new JSONArray(response);
@@ -117,23 +108,39 @@ public class Login_Activity extends AppCompatActivity {
                 texto = jsonArray.getJSONObject(i).getString("username");
                 lista.add(texto);
             }
+
         }catch(Exception e){
 
         }
         return lista;
     }
 
+    public ArrayList<String> passJSON(String response){
 
+        ArrayList<String> lista = new ArrayList<String>();
+        try{
+            JSONArray jsonArray = new JSONArray(response);
+            String texto;
+            for(int i=0; i<jsonArray.length(); i++){
+                texto = jsonArray.getJSONObject(i).getString("password");
+                lista.add(texto);
+            }
 
-    public Boolean tieneUsuario(String u){
-        for (String i:listaU) {
-            if (i.equals(u)){
+        }catch(Exception e){
+
+        }
+        return lista;
+    }
+
+    public Boolean verifPass(String u, String u2){
+        for (int i=0; i<listaU.size(); i++) {
+            if ((listaU.get(i).equals(u)) && (listaP.get(i).equals(u2))){
                 return Boolean.TRUE;
             }
         }
         return Boolean.FALSE;
     }
-    //Boton Login
+
 
 
 }
