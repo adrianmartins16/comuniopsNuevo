@@ -21,12 +21,12 @@ import cz.msebera.android.httpclient.Header;
 
 public class Login_Activity extends AppCompatActivity {
 
-    Button btLogin;
-    Button btRegistro;
-    EditText etUser;
-    EditText etPass;
-    ArrayList<String> listaU = new ArrayList<>();
-    ArrayList<String> listaP = new ArrayList<>();
+    private Button btLogin;
+    private Button btRegistro;
+    private EditText etUser;
+    private EditText etPass;
+    private ArrayList<String> listaU = new ArrayList<>();
+    private ArrayList<String> listaP = new ArrayList<>();
 
 
 
@@ -100,7 +100,7 @@ public class Login_Activity extends AppCompatActivity {
 
     public ArrayList<String> usersJSON(String response){
 
-        ArrayList<String> lista = new ArrayList<String>();
+        ArrayList<String> lista = new ArrayList<>();
         try{
             JSONArray jsonArray = new JSONArray(response);
             String texto;
@@ -117,7 +117,7 @@ public class Login_Activity extends AppCompatActivity {
 
     public ArrayList<String> passJSON(String response){
 
-        ArrayList<String> lista = new ArrayList<String>();
+        ArrayList<String> lista = new ArrayList<>();
         try{
             JSONArray jsonArray = new JSONArray(response);
             String texto;

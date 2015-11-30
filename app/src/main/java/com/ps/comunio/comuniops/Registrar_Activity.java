@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class Registrar_Activity extends AppCompatActivity {
-    EditText etUserNew;
-    EditText etPassNew;
-    EditText etPass2New;
-    ArrayList<String> listaU = new ArrayList<>();
+    private EditText etUserNew;
+    private EditText etPassNew;
+    private EditText etPass2New;
+    private ArrayList<String> listaU = new ArrayList<>();
 
 
     @Override
@@ -115,7 +115,7 @@ public class Registrar_Activity extends AppCompatActivity {
     //Devuelve un arrayList con todos los usuarios existentes
     public ArrayList<String> usersJSON(String response){
 
-        ArrayList<String> lista = new ArrayList<String>();
+        ArrayList<String> lista = new ArrayList<>();
         try{
             JSONArray jsonArray = new JSONArray(response);
             String texto;

@@ -12,24 +12,15 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Ligas"
-        android:id="@+id/textViewMercado"
+        android:id="@+id/textViewLigas"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:src="@mipmap/actualizar"
-        android:layout_alignTop="@+id/textViewMercado"
-        android:layout_toRightOf="@+id/textViewMercado"
-        android:layout_alignBottom="@+id/textViewMercado" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:entries="@array/liguilla"
-        android:layout_below="@+id/textViewMercado" />
+        android:layout_below="@+id/textViewLigas"
+        android:id="@+id/lvLigas"/>
 
 
 

@@ -12,10 +12,11 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="#ffffff">
 
-        <ImageView
-            android:layout_width="140dp"
+        <WebView
+            android:layout_width="178dp"
             android:layout_height="140dp"
             android:id="@+id/ivjugador"
             android:layout_gravity="center_horizontal|top"
@@ -26,10 +27,11 @@
             android:scaleType="fitXY" />
 
         <LinearLayout
+            android:layout_marginTop="23dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="155dp"
-            android:layout_gravity="center">
+            android:layout_gravity="right|center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"

@@ -9,32 +9,83 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
+
 public class Jugadores_Activity extends AppCompatActivity {
     private ListView list;
+    private ArrayList<String> jugadores = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugadores_);
 
-        final String[] jugadores = {"Tono", "Victor", "Van Der Bin", "Felix", "Alvaro", "Adrian", "Uafi", "Carlos", "Suparman", "Manril", "Torres", "Walter White", "Donald McDonnal", "Chuck Norris", "Bruce Banner", "Babab George", "Neymar","Marco Lolo","Benzema","Igor Casitas","Oliver Atom","Harry Rotter","Neil","Nicolas Rage"};
-
-
         list = (ListView)findViewById(R.id.lvjugadores);
-        ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, jugadores);
+        obtDatos();
 
-        list.setAdapter(adaptador);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
 
-                Toast.makeText(getApplicationContext(), "Cargando: " + jugadores[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Cargando: " +jugadores.get(position) , Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Jugadores_Activity.this, Jugador_Activity.class);
-                i.putExtra("jugador", position);
+                String j = jugadores.get(position);
+                i.putExtra("jugador", j);
                 startActivity(i);
             }
 
         });
+    }
+
+    public void obtDatos(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://comuniops.hol.es/index.php?funcion=getPlayers";
+        RequestParams params = new RequestParams();
+        client.get(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200) {
+                    cargarLista(playersJSON(new String(responseBody)));
+                    jugadores = playersJSON(new String(responseBody));
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
+    //Devuelve un ArrayList con todos los jugadores del comunio
+    public ArrayList<String> playersJSON(String response){
+
+        ArrayList<String> lista = new ArrayList<>();
+        try{
+            JSONArray jsonArray = new JSONArray(response);
+            String texto;
+            for(int i=0; i<jsonArray.length(); i++){
+                texto = jsonArray.getJSONObject(i).getString("name");
+                lista.add(texto);
+            }
+
+        }catch(Exception e){
+
+        }
+        return lista;
+    }
+
+    public void cargarLista(ArrayList<String> players){
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, players);
+        list.setAdapter(adaptador);
     }
 }

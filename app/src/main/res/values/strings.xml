@@ -6,16 +6,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_jornadas_">Jornadas_Activity</string>
+    <string name="title_activity_jornadas_">Jornadas</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_mercado">Mercado</string>
-    <string name="title_activity_equipo_">Equipo_Activity</string>
-    <string name="title_activity_venta_">Venta_Activity</string>
+    <string name="title_activity_equipo_">Equipoy</string>
+    <string name="title_activity_venta_">Venta</string>
 
-    <string-array name="liguilla">
-        <item>LigAmigos</item>
-        <item>LigaUni</item>
-        <item>LigaPro</item>
-    </string-array>
+    <string name="title_activity_ficha_">Jugador</string>
+    <string name="title_activity_participantes_">Participantes</string>
 </resources>

@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TabHost;
-import android.widget.TextView;
+
 
 public class Home_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Button btTwitter;
@@ -124,13 +124,20 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_ligas) {
+            String usr2 = getIntent().getStringExtra("user");
             Intent i = new Intent(Home_Activity.this, Liga_Activity.class);
+            i.putExtra("user", usr2);
             startActivity(i);
         } else if (id == R.id.nav_miequipo) {
+            String usr = getIntent().getStringExtra("user");
             Intent i = new Intent(Home_Activity.this, Equipo_Activity.class);
+            i.putExtra("user", usr);
             startActivity(i);
         } else if (id == R.id.nav_mercado) {
+            //Intent usuario
+            String usr1 = getIntent().getStringExtra("user");
             Intent i = new Intent(Home_Activity.this, Mercado_Activity.class);
+            i.putExtra("user", usr1);
             startActivity(i);
         } else if (id == R.id.nav_jornada) {
             Intent i = new Intent(Home_Activity.this, Jornadas_Activity.class);
